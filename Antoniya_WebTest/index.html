@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Dashboard</title>
+    <style>
+        /* ====== GENERAL STYLES ====== */
+        * {
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+        body {
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            background-color: #f4f7fa;
+            color: #222;
+        }
+
+        /* ====== HEADER ====== */
+        header {
+            background: linear-gradient(135deg, #0077cc, #00aaff);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* ====== NAVBAR ====== */
+        nav {
+            background: #004b80;
+            text-align: center;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        /* ====== MAIN SECTION ====== */
+        main {
+            padding: 25px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        /* ====== CARD STYLE ====== */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 25px;
+        }
+        .card h3 {
+            color: #0077cc;
+        }
+
+        /* ====== TABLE STYLE ====== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #0077cc;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f9ff;
+        }
+
+        /* ====== FORM STYLE ====== */
+        input, textarea, button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+        button {
+            background: #0077cc;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #005fa3;
+        }
+
+        /* ====== LIGHT/DARK MODE BUTTONS ====== */
+        .mode-buttons {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .mode-buttons button {
+            width: auto;
+            padding: 8px 16px;
+            margin: 5px;
+            border-radius: 8px;
+        }
+
+        /* ====== TO-DO LIST ====== */
+        #taskList {
+            list-style-type: none;
+            padding: 0;
+        }
+        #taskList li {
+            background: #e7f0fa;
+            margin: 8px 0;
+            padding: 10px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #taskList li:hover {
+            background: #d8ebff;
+        }
+        .delete-btn {
+            background-color: crimson;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .delete-btn:hover {
+            background-color: darkred;
+        }
+
+        /* ====== FOOTER ====== */
+        footer {
+            background: #004b80;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+
+        /* ====== DARK MODE ====== */
+        .dark-mode {
+            background-color: #121212;
+            color: #f1f1f1;
+        }
+        .dark-mode .card {
+            background-color: #1e1e1e;
+            box-shadow: 0 0 10px rgba(255,255,255,0.1);
+        }
+        .dark-mode table th {
+            background-color: #333;
+        }
+        .dark-mode table td {
+            border-color: #444;
+        }
+        .dark-mode nav, .dark-mode footer {
+            background: #222;
+        }
+        .dark-mode nav a {
+            color: #ccc;
+        }
+        .dark-mode nav a:hover {
+            color: #00aaff;
+        }
+    </style>
+</head>
+
+<body>
+    <header>Student Dashboard</header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Tasks</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <main>
+        <!-- STUDENT INFO -->
+        <div class="card">
+            <h3>Student Information</h3>
+            <p><strong>Name:</strong> Antoniya Jency</p>
+            <p><strong>Roll Number:</strong> 27CSA</p>
+            <p><strong>Course:</strong> Computer Science Engineering</p>
+        </div>
+
+        <!-- MARKS TABLE -->
+        <div class="card">
+            <h3>Marks Table</h3>
+            <table>
+                <tr>
+                    <th>Subject</th>
+                    <th>Marks</th>
+                    <th>Grade</th>
+                </tr>
+                <tr>
+                    <td>Maths</td>
+                    <td>95</td>
+                    <td>A+</td>
+                </tr>
+                <tr>
+                    <td>Physics</td>
+                    <td>88</td>
+                    <td>A</td>
+                </tr>
+                <tr>
+                    <td>Chemistry</td>
+                    <td>92</td>
+                    <td>A+</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- CONTACT FORM -->
+        <div class="card">
+            <h3>Contact Me</h3>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <!-- LIGHT/DARK MODE -->
+        <div class="mode-buttons">
+            <button onclick="setLight()">🌞 Light Mode</button>
+            <button onclick="setDark()">🌙 Dark Mode</button>
+        </div>
+
+        <!-- TO-DO LIST -->
+        <div class="card">
+            <h3>My To-Do List</h3>
+            <input type="text" id="taskInput" placeholder="Enter a task">
+            <button onclick="addTask()">Add Task</button>
+            <ul id="taskList"></ul>
+        </div>
+    </main>
+
+    <footer>© 2025 Web Dev Class</footer>
+
+    <script>
+        /* ====== LIGHT / DARK MODE ====== */
+        function setDark() {
+            document.body.classList.add("dark-mode");
+        }
+        function setLight() {
+            document.body.classList.remove("dark-mode");
+        }
+
+        /* ====== TO-DO LIST ====== */
+        function addTask() {
+            const input = document.getElementById("taskInput");
+            const task = input.value.trim();
+            if (task === "") return;
+
+            const li = document.createElement("li");
+            li.textContent = task;
+
+            const del = document.createElement("button");
+            del.textContent = "Delete";
+            del.className = "delete-btn";
+            del.onclick = () => li.remove();
+
+            li.appendChild(del);
+            document.getElementById("taskList").appendChild(li);
+            input.value = "";
+        }
+
+        /* ====== TASK 4: JS LOGIC (FOR CONSOLE) ====== */
+        console.log("=== Task 4: JavaScript Logic ===");
+
+        // Q1: Positive, Negative, or Zero
+        let num = 5;
+        if(num > 0) console.log("Q1: Positive");
+        else if(num < 0) console.log("Q1: Negative");
+        else console.log("Q1: Zero");
+
+        // Q2: Even or Odd
+        num = 8;
+        console.log("Q2:", num % 2 === 0 ? "Even" : "Odd");
+
+        // Q3: Print numbers 1-10
+        console.log("Q3: Numbers 1 to 10");
+        for(let i=1; i<=10; i++) console.log(i);
+
+        // Q4: Sum of numbers 1-50
+        let sum = 0;
+        for(let i=1; i<=50; i++) sum += i;
+        console.log("Q4: Sum =", sum);
+
+        // Q5: Largest of 3 numbers
+        let a=15, b=22, c=9;
+        if(a>=b && a>=c) console.log("Q5: Largest =", a);
+        else if(b>=a && b>=c) console.log("Q5: Largest =", b);
+        else console.log("Q5: Largest =", c);
+
+        // Q6: Multiplication Table (Uncomment to use)
+        // let n = prompt("Enter a number:");
+        // for(let i=1; i<=10; i++) console.log(`${n} x ${i} = ${n*i}`);
+    </script>
+</body>
+</html>
